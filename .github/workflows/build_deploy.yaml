@@ -42,23 +42,11 @@ jobs:
           run: |
             pip install Flask; 
             echo "github_workspace = ${{ github.workspace }}";
-            python main.py;
-            files_on_runner="$(ls /home/runner/work/static_HTML/static_HTML)"; 
-            echo "files_on_runner = $files_on_runner";
+            
+            
+      - name: Create the index.html
+        run: python "${{ github.workspace }}/main.py";
 
-      - name: Commit and push changes
-        run: |
-          repoOwner=$(echo "${{ github.repository }}" | cut -d '/' -f 1);
-          repoOwnerEmail="j622amilah@gmail.com";
-          git config --global user.email ${repoOwnerEmail};
-          git config --global user.name ${repoOwner};
-          git pull origin main;
-          git checkout main;
-          git branch --set-upstream-to origin/main;
-          git merge main --ff-only;
-          git add -A;
-          git diff-index --quiet HEAD || git commit -m "add files" --allow-empty;
-          git push
       
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
