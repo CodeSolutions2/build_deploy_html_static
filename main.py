@@ -15,5 +15,5 @@ if __name__ == '__main__':
     with app.test_request_context():
         html_content = app.dispatch_request()
     
-    with open('/home/runner/work/static_HTML/static_HTML/index.html', 'w') as f:
+    with open('index.html', 'w') as f:
         f.write(html_content)
