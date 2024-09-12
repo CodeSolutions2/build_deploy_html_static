@@ -40,8 +40,11 @@ jobs:
         with:
           python-version: '3.10'
           run: |
-            pip install -U Flask; 
-            python main.py
+            pip install Flask; 
+            echo "github_workspace = ${{ github.workspace }}";
+            python main.py;
+            files_on_runner="$(ls /home/runner/work/static_HTML/static_HTML)"; 
+            echo "files_on_runner = $files_on_runner";
 
       - name: Commit and push changes
         run: |
