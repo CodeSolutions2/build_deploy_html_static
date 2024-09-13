@@ -50,6 +50,7 @@ jobs:
             # ---------------------------------------
             # Obtain data in JSON
             curl -H "Accept: application/json" -H "Content-Type: application/json" -X GET $URL_CONTENT > data.json;
+            cat data.json > data.csv;
             json_str=$(cat data.json);
             echo "json_str = $json_str";
             # ---------------------------------------
