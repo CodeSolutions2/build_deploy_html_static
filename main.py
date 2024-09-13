@@ -10,20 +10,18 @@ def display_figure(url_content):
   from js import fetch
 
   # --------------------------------
-  # data = pd.DataFrame({'a': list('CCCDDDEEE'), 'b': [2, 7, 4, 1, 2, 6, 8, 4, 7]});
-  # x_axis_variable = 'a'
-  # y_axis_variable = 'b'
   
-  # OR
+  res = requests.get(url_content)
+  if response.status_code == 200:
+      data = response.json()
+      data = pd.read_json(data)
+      x_axis_variable = 'petal_width' # sepal_length, sepal_width, petal_length, petal_width
+      y_axis_variable = 'species'
+  else:
+      data = pd.DataFrame({'a': list('CCCDDDEEE'), 'b': [2, 7, 4, 1, 2, 6, 8, 4, 7]});
+      x_axis_variable = 'a'
+      y_axis_variable = 'b'
   
-  res = fetch(url_content)
-  text = res.text()
-  filename = 'data.csv'
-  with open(filename, 'w') as f:
-      f.write(text)
-  data = pd.read_csv(filename)
-  x_axis_variable = 'petal_width' # sepal_length, sepal_width, petal_length, petal_width
-  y_axis_variable = 'species'
   # --------------------------------
   
   # Make the chart
