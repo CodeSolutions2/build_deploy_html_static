@@ -1,6 +1,6 @@
 # -----------------------------
 
-def display_figure(name_of_file):
+def display_figure(json_str):
   import pandas as pd
 
   # --------------------------------
@@ -10,22 +10,25 @@ def display_figure(name_of_file):
   # x_axis_variable = 'petal_width' # sepal_length, sepal_width, petal_length, petal_width
   # y_axis_variable = 'species'
   
-  # data = pd.DataFrame({'a': list('CCCDDDEEE'), 'b': [2, 7, 4, 1, 2, 6, 8, 4, 7]});
-  # x_axis_variable = 'a'
-  # y_axis_variable = 'b'
+  data = pd.DataFrame({'a': list('CCCDDDEEE'), 'b': [2, 7, 4, 1, 2, 6, 8, 4, 7]});
+  x_axis_variable = 'a'
+  y_axis_variable = 'b'
 
   # Read csv from runner
-  data = pd.DataFrame("/home/runner/work/static_HTML/static_HTML/data.csv");
-  x_axis_variable = 'petal_width' # sepal_length, sepal_width, petal_length, petal_width
-  y_axis_variable = 'species'
-  
+  # data = pd.DataFrame("/home/runner/work/static_HTML/static_HTML/data.csv");
+  # x_axis_variable = 'petal_width' # sepal_length, sepal_width, petal_length, petal_width
+  # y_axis_variable = 'species'
+  # DataFrame error
+
+  # Process string data
+  # json_str.split();
   # --------------------------------
   
   # Make the chart
   import altair as alt
   chart = alt.Chart(data).mark_point().encode(x=x_axis_variable, y=y_axis_variable).interactive()
 
-  return chart.to_html();
+  return [chart.to_html(), json_str];
   
 # -----------------------------
 
@@ -34,7 +37,7 @@ def display_figure(name_of_file):
 # Main
 # -----------------------------
 import sys
-name_of_file = sys.argv[1]
+json_str = sys.argv[1]
 
 title = "Display data"
 
@@ -52,7 +55,7 @@ title = "Display data"
 
 
 # Could read url_content from a file using GET
-html_chart = display_figure(name_of_file);
+[html_chart, url_data] = display_figure(json_str);
   
 print(f'''<!DOCTYPE html>
 <html>
@@ -64,6 +67,8 @@ print(f'''<!DOCTYPE html>
 <input type="text" name="data_url" id="data_url" value="" style="display:block;">
 <button id="refresh_plot" onclick="refresh_plot()" style="display:block">Refresh plot</button>
 <div>{html_chart}</div>
+<h2>Data from url</h2>
+<div>{url_data}</div>
 <script type="module" redirect="follow" mode="no-cors">import {{ run_backend_process, GET_fileDownloadUrl_and_sha }} from "https://codesolutions2.github.io/static_HTML/library_to_run_GitHub_Actions.js";
 module.run_backend_process = run_backend_process;
 module1.GET_fileDownloadUrl_and_sha = GET_fileDownloadUrl_and_sha;
