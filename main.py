@@ -1,9 +1,9 @@
-# def run_process():
-#   return 4+4;
+def run_process():
+  return 4+4;
 
 title = "Display data"
-# data = run_process();
-data = 5+5;
+data = run_process();
+# data = 5+5;
   
 print(f'''<!DOCTYPE html>
 <html>
