@@ -45,6 +45,7 @@ jobs:
         run: | 
           result="$(python '${{ github.workspace }}/main1.py')";
           echo "$result" > index.html;
+          cat index.html
           
 
       - name: Commit and push changes
