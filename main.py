@@ -5,14 +5,12 @@ def run_process():
 
 # -----------------------------
 
-def display_figure(url_content):
+def display_figure(json_str):
   import pandas as pd
-  import requests
 
   # --------------------------------
   
-  res = requests.get(url_content)
-  if res.status_code == 200:
+  if (len(json_str) > 0):
       data = res.json()
       data = pd.read_json(data)
       x_axis_variable = 'petal_width' # sepal_length, sepal_width, petal_length, petal_width
@@ -37,7 +35,7 @@ def display_figure(url_content):
 # Main
 # -----------------------------
 import sys
-url_content = sys.argv[1]
+json_str = sys.argv[1]
 
 title = "Display data"
 
@@ -55,7 +53,7 @@ title = "Display data"
 
 
 # Could read url_content from a file using GET
-html_chart = display_figure(url_content);
+html_chart = display_figure(json_str);
   
 print(f'''<!DOCTYPE html>
 <html>
