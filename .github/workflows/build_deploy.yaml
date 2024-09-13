@@ -37,15 +37,10 @@ jobs:
         with:
           python-version: '3.10'
           run: |
-            pip install Flask; 
-            echo "github_workspace = ${{ github.workspace }}";
-            
-            
-      - name: Create the index.html
-        run: | 
-          result="$(python '${{ github.workspace }}/main.py')";
-          echo "$result" > index.html;
-          cat index.html
+            pip install Jinja2; 
+            result="$(python '${{ github.workspace }}/main2.py')";
+            echo "$result" > index.html;
+            cat index.html
           
 
       - name: Commit and push changes
