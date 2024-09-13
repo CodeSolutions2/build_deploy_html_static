@@ -11,8 +11,7 @@ def display_figure(json_str):
   # --------------------------------
   
   if (len(json_str) > 0):
-      data = res.json()
-      data = pd.read_json(data)
+      data = pd.read_json(json_str)
       x_axis_variable = 'petal_width' # sepal_length, sepal_width, petal_length, petal_width
       y_axis_variable = 'species'
   else:
