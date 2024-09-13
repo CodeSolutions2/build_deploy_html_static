@@ -14,7 +14,7 @@ def display_figure():
   import altair as alt
 
   # make the chart
-  chart = alt.Chart(data).mark_point().encode(x='a', y='b', color='Origin').interactive()
+  chart = alt.Chart(data).mark_point().encode(x='a', y='b')  #.interactive()
 
   return chart.to_html();
   
