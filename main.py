@@ -12,8 +12,8 @@ def display_figure(url_content):
   # --------------------------------
   
   res = requests.get(url_content)
-  if response.status_code == 200:
-      data = response.json()
+  if res.status_code == 200:
+      data = res.json()
       data = pd.read_json(data)
       x_axis_variable = 'petal_width' # sepal_length, sepal_width, petal_length, petal_width
       y_axis_variable = 'species'
