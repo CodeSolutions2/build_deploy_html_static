@@ -1,23 +1,23 @@
 # -----------------------------
 
-def run_process():
-  return 4+4;
-
-# -----------------------------
-
-def display_figure(json_str):
+def display_figure(name_of_file):
   import pandas as pd
 
   # --------------------------------
   
-  if (len(json_str) > 0):
-      data = pd.read_json(json_str)
-      x_axis_variable = 'petal_width' # sepal_length, sepal_width, petal_length, petal_width
-      y_axis_variable = 'species'
-  else:
-      data = pd.DataFrame({'a': list('CCCDDDEEE'), 'b': [2, 7, 4, 1, 2, 6, 8, 4, 7]});
-      x_axis_variable = 'a'
-      y_axis_variable = 'b'
+  # Read json data
+  # data = pd.read_json(json_str)
+  # x_axis_variable = 'petal_width' # sepal_length, sepal_width, petal_length, petal_width
+  # y_axis_variable = 'species'
+  
+  # data = pd.DataFrame({'a': list('CCCDDDEEE'), 'b': [2, 7, 4, 1, 2, 6, 8, 4, 7]});
+  # x_axis_variable = 'a'
+  # y_axis_variable = 'b'
+
+  # Read csv from runner
+  data = pd.DataFrame("/home/runner/work/static_HTML/static_HTML/"+name_of_file);
+  x_axis_variable = 'petal_width' # sepal_length, sepal_width, petal_length, petal_width
+  y_axis_variable = 'species'
   
   # --------------------------------
   
@@ -34,7 +34,7 @@ def display_figure(json_str):
 # Main
 # -----------------------------
 import sys
-json_str = sys.argv[1]
+name_of_file = sys.argv[1]
 
 title = "Display data"
 
@@ -52,7 +52,7 @@ title = "Display data"
 
 
 # Could read url_content from a file using GET
-html_chart = display_figure(json_str);
+html_chart = display_figure(name_of_file);
   
 print(f'''<!DOCTYPE html>
 <html>
