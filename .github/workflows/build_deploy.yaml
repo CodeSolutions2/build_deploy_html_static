@@ -47,7 +47,12 @@ jobs:
         run: |
             URL_CONTENT="$(cat launch.txt | cut -d '|' -f 1)"; 
             echo "URL_CONTENT = $URL_CONTENT";
-            result="$(python '${{ github.workspace }}/main.py' $URL_CONTENT)";
+            # ---------------------------------------
+            # Obtain data in JSON
+            json_str=$(curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET $URL_CONTENT);
+            echo "json_str = $json_str";
+            # ---------------------------------------
+            result="$(python '${{ github.workspace }}/main.py' $json_str)";
             echo "$result" > index.html;
             cat index.html
           
