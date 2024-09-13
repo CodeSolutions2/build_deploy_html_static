@@ -16,8 +16,8 @@ def display_figure(url_content):
   
   # OR
   
-  res = await fetch(url_content)
-  text = await res.text()
+  res = fetch(url_content)
+  text = res.text()
   filename = 'data.csv'
   with open(filename, 'w') as f:
       f.write(text)
