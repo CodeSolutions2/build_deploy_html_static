@@ -37,7 +37,7 @@ jobs:
         with:
           python-version: '3.10'
           run: |
-            result="$(python '${{ github.workspace }}/main.py')";
+            result="$(python '${{ github.workspace }}/main1.py')";
             echo "$result" > index.html;
             cat index.html
           
