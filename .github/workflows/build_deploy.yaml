@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - '**.txt'
+      - launch.txt'
       
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions: write-all
@@ -44,7 +44,9 @@ jobs:
           
       - name: Create the index.html
         run: |
-            result="$(python '${{ github.workspace }}/main.py')";
+            URL_CONTENT="$(cat launch.txt | cut -d '|' -f 1)"; 
+            echo "URL_CONTENT = $URL_CONTENT";
+            result="$(python '${{ github.workspace }}/main.py $URL_CONTENT')";
             echo "$result" > index.html;
             cat index.html
           
