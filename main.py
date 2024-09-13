@@ -1,11 +1,11 @@
-def run_process():
-  
-  return 4+4;
+# def run_process():
+#   return 4+4;
 
 
 if __name__ == '__main__':
   title = "Display data"
-  data = run_process();
+  # data = run_process();
+  data = 4+4;
   
   print(f'''<!DOCTYPE html>
 <html>
