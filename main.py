@@ -14,7 +14,7 @@ def display_figure():
   import altair as alt
 
   # make the chart
-  alt.Chart(data).mark_point().encode(x='x axis title', y='Miles_per_Gallon', color='Origin').interactive()
+  chart = alt.Chart(data).mark_point().encode(x='a', y='b', color='Origin').interactive()
 
   return chart.to_html();
   
