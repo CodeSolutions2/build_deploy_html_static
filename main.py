@@ -16,7 +16,7 @@ def display_figure():
   # make the chart
   alt.Chart(data).mark_point().encode(x='x axis title', y='Miles_per_Gallon', color='Origin').interactive()
 
-  return html_string = chart.to_html();
+  return chart.to_html();
   
 # -----------------------------
 
