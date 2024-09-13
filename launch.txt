@@ -1,1 +1,1 @@
-https://raw.githubusercontent.com/CodeSolutions2/plotly_pyodide_dashboard/main/data.csv|static_HTML 
+https://raw.githubusercontent.com/CodeSolutions2/plotly_pyodide_dashboard/main/data.csv|static_HTML
