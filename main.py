@@ -15,7 +15,7 @@ def display_figure(name_of_file):
   # y_axis_variable = 'b'
 
   # Read csv from runner
-  data = pd.DataFrame("/home/runner/work/static_HTML/static_HTML/"+name_of_file);
+  data = pd.DataFrame("/home/runner/work/static_HTML/static_HTML/data.csv");
   x_axis_variable = 'petal_width' # sepal_length, sepal_width, petal_length, petal_width
   y_axis_variable = 'species'
   
