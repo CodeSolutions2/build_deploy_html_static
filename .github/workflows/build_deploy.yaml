@@ -53,7 +53,7 @@ jobs:
             json_str=$(cat data.json);
             echo "json_str = $json_str";
             # ---------------------------------------
-            result="$(python '${{ github.workspace }}/main.py' $json_str)";
+            result="$(python '${{ github.workspace }}/main.py' 'data.json')";
             echo "$result" > index.html;
             cat index.html
           
