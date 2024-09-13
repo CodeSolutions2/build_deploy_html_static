@@ -37,8 +37,7 @@ jobs:
         with:
           python-version: '3.10'
           run: |
-            pip install Jinja2; 
-            result="$(python '${{ github.workspace }}/main2.py')";
+            result="$(python '${{ github.workspace }}/main.py')";
             echo "$result" > index.html;
             cat index.html
           
