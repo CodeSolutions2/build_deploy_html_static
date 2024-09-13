@@ -46,11 +46,9 @@ jobs:
             
       - name: Create the index.html
         run: | 
-          result="$(python '${{ github.workspace }}/main.py')";
-          echo "result = $result";
-          echo "result1=$(python '${{ github.workspace }}/main.py')" >> "$GITHUB_ENV";
-          echo "result1 = $result1";
+          result="$(python '${{ github.workspace }}/main1.py')";
           echo "$result" > index.html;
+          
 
       - name: Commit and push changes
         run: |
