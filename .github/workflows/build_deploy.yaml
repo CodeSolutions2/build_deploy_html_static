@@ -43,7 +43,7 @@ jobs:
             
       - name: Create the index.html
         run: | 
-          result="$(python '${{ github.workspace }}/main1.py')";
+          result="$(python '${{ github.workspace }}/main.py')";
           echo "$result" > index.html;
           cat index.html
           
