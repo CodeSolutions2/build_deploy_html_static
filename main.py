@@ -1,4 +1,4 @@
-def display_figure(json_str):
+def display_figure():
   import pandas as pd
   
   data = pd.DataFrame({'a': list('CCCDDDEEE'), 'b': [2, 7, 4, 1, 2, 6, 8, 4, 7]});
@@ -18,7 +18,7 @@ def display_figure(json_str):
 # -----------------------------
 title = "Display data"
 
-html_chart = display_figure(json_str);
+html_chart = display_figure();
   
 print(f'''<!DOCTYPE html>
 <html>
