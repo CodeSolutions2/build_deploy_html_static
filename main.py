@@ -3,7 +3,7 @@
 
 title = "Display data"
 # data = run_process();
-data = 4+4;
+data = 5+5;
   
 print(f'''<!DOCTYPE html>
 <html>
