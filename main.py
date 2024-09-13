@@ -7,7 +7,7 @@ def run_process():
 
 def display_figure(url_content):
   import pandas as pd
-  from js import fetch
+  import requests
 
   # --------------------------------
   
