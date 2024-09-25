@@ -47,8 +47,6 @@ end = ['</head>', '<script>', '</script>']
 for ind, val in enumerate(start):
 
     # Find all text between the two markers
-    # print('val: ', val)
-    # print('end[ind]: ', end[ind])
     re_expression=f'{val}(.*?){end[ind]}';
 
     # Find text
@@ -57,11 +55,6 @@ for ind, val in enumerate(start):
 
     # Remove
     text.append(out)
-
-    # Remove text from original HTML
-    # Way 0 : remove exact text - problem is that it gives errors
-    # text_str2 = regex.sub(out[0], "", text_str2)
-    # print('text_str2: ', text_str2)
 
     # Way 1: remove text from start to end
     st = out[0][0:100]
