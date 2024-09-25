@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - '**.txt'
+      - 'launch.txt'
       
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions: write-all
