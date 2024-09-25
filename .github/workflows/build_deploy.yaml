@@ -42,6 +42,7 @@ jobs:
         run: |
           pip install pandas;
           pip install altair;
+          pip install regex;
           
       - name: Create the index.html
         run: |
