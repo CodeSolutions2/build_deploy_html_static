@@ -20,14 +20,6 @@ title = "Display data"
 
 html_chart = display_figure();
   
-print(f'''<!DOCTYPE html>
-<html>
-<head></head>
-<body>
-<h1>{title}</h1>
-<div>{html_chart}</div>
-</script>
-<script>
-</script>
-</body>
-</html>''')
+print(f'''
+{html_chart}
+''')
