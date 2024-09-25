@@ -32,12 +32,10 @@ import regex
 # Remove all newline characters
 re_exp = "\n"
 html_chart = regex.sub(re_exp, "", html_chart)
-# print('html_chart: ', html_chart)
 
 # Replace 2 or more consecutive spaces with one space
 re_exp = "\s+"
 html_chart1 = regex.sub(re_exp, " ", html_chart)
-# print('html_chart1: ', html_chart1)
 
 text = []
 # html=go_in_body, html=go_in_body, js=go_in_script
@@ -51,7 +49,6 @@ for ind, val in enumerate(start):
 
     # Find text
     out = regex.findall(re_expression, html_chart1)
-    # print('out[0]: ', out[0])
 
     # Remove
     text.append(out)
@@ -60,16 +57,12 @@ for ind, val in enumerate(start):
     st = out[0][0:100]
     ed = out[0][-100:]
     html_chart1 = regex.sub(re_expression, "", html_chart1)
-    # print('html_chart1: ', html_chart1)
     
-# print('text: ', text)
 
 # Assign the correct code to the desired HTML sections
 altair_body_output = text[0][0] + '' + text[1][0];
-print('altair_body_output: ', altair_body_output)
 
 altair_script_output = text[2][0];
-print('altair_script_output: ', altair_script_output)
 
 print(f'''<!DOCTYPE html>
 <html>
