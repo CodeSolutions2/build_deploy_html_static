@@ -70,9 +70,8 @@ print(f'''<!DOCTYPE html>
 <body>
 <h1>{title}</h1>
 <div id=altair_body_output>{altair_body_output}</div>
-</script>
-{altair_script_output}
 <script>
+{altair_script_output}
 </script>
 </body>
 </html>''')
